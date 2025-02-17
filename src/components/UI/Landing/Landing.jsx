@@ -36,7 +36,7 @@ function Landing() {
         <p 
           className={`text-white mt-6 sm:mt-10 text-3xl sm:text-5xl md:text-6xl font-bold transform transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} 
         >
-          CIVILICO
+          CIVILCO
         </p>
         {/* Description */}
         <p 
