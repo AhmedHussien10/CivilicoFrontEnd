@@ -5,7 +5,7 @@ import hacker from '../../../assets/Civilsicon/Hacker.svg';
 import broca from '../../../assets/Civilsicon/Broca.svg';
 import org from '../../../assets/Civilsicon/Org.svg';
 import semi from '../../../assets/Civilsicon/Semicolon.svg';
-import upgrade from '../../../assets/Civilsicon/Upgrade.svg';
+import upgrade from '../../../assets/Civilsicon/upgrade.svg';
 import { MdPostAdd } from "react-icons/md";
 import { FaRegSmile } from "react-icons/fa";
 import { BsCalendarEvent } from "react-icons/bs";
