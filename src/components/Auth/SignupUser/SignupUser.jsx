@@ -1,0 +1,165 @@
+import { FaArrowLeft, FaEnvelope, FaEye, FaEyeSlash, FaUser, FaPhone, FaCalendar, FaLock } from 'react-icons/fa';
+import LoginImg from '../../../assets/LoginImg/LoginImg.svg';
+import civilcoLogo from "../../../assets/Header/civilco.svg";
+import InputField from '../InputFields/InputField';
+import Button from '../CustomButton/Button';
+import { useState } from 'react';
+
+const SignUpUser = () => {
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
+
+    const toggleConfirmPasswordVisibility = () => {
+        setShowConfirmPassword(!showConfirmPassword);
+    };
+
+    return (
+        <div className="flex flex-col sm:flex-row lg:flex-row h-screen">
+            {/* Left side */}
+            <div className="w-full sm:w-full lg:w-1/2 flex flex-col justify-center items-center p-6 lg:p-10 bg-white h-full">
+                {/* Logo and Back Button */}
+                <div className="w-full max-w-md flex items-center justify-center  lg:lg:top-5 lg:left-6 transform -translate-x-10">
+                    {/* Back Button */}
+                    <div className="flex items-center cursor-pointer text-[#3B5F5D]">
+                        <FaArrowLeft className="text-2xl mr-2" />
+                        <span className="text-sm lg:text-lg font-bold underline p-2">Back</span>
+                    </div>
+                    {/* Logo */}
+                    <div className="ml-4">
+                        <img src={civilcoLogo} alt="Logo" className="h-12 lg:h-16" />
+                    </div>
+                </div>
+
+                {/* Sign Up Heading */}
+                <div>
+                    <h2 className="text-2xl lg:text-3xl text-center mb-4 text-black">Sign Up</h2>
+                </div>
+
+                {/* Input Fields Container */}
+                <div className="w-full max-w-md">
+                    {/* First Name and Last Name Input Fields */}
+                    <div className="flex mb-4">
+                        <div className="relative flex-1 mr-2">
+                            <InputField
+                                placeholder="First Name"
+                                type="text"
+                                className="w-full pl-3 pr-10"  // Add padding for the icon
+                            />
+                            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                <FaUser className="text-gray-400" />
+                            </div>
+                        </div>
+                        <div className="relative flex-1 ml-2">
+                            <InputField
+                                placeholder="Last Name"
+                                type="text"
+                                className="w-full pl-3 pr-10"  // Add padding for the icon
+                            />
+                            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                <FaUser className="text-gray-400" />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Email Input Field */}
+                    <div className="mb-4 relative">
+                        <InputField
+                            placeholder="Email"
+                            type="email"
+                            className="w-full pl-3 pr-10"  // Add padding for the icon
+                        />
+                        <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                            <FaEnvelope className="text-gray-400" />
+                        </div>
+                    </div>
+
+                    {/* Phone Number Input Field */}
+                    <div className="mb-4 relative">
+                        <InputField
+                            placeholder="Phone Number"
+                            type="tel"
+                            className="w-full pl-3 pr-10"  // Add padding for the icon
+                        />
+                        <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                            <FaPhone className="text-gray-400" />
+                        </div>
+                    </div>
+
+                    {/* Birthday Input Field */}
+                    <div className="mb-4 relative">
+                        <InputField
+                            placeholder="Birthday (DD/MM/YY)"
+                            type="text"
+                            className="w-full pl-3 pr-10"  // Add padding for the icon
+                        />
+                        <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                            <FaCalendar className="text-gray-400" />
+                        </div>
+                    </div>
+
+                    {/* Password Input Field */}
+                    <div className="mb-4 relative">
+                        <InputField
+                            placeholder="Password"
+                            type={showPassword ? "text" : "password"}
+                            className="w-full pl-3 pr-10"  // Add padding for the icon
+                        />
+                        <div className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer" onClick={togglePasswordVisibility}>
+                            {showPassword ? <FaEyeSlash className="text-gray-400" /> : <FaEye className="text-gray-400" />}
+                        </div>
+                    </div>
+
+                    {/* Confirm Password Input Field */}
+                    <div className="mb-4 relative">
+                        <InputField
+                            placeholder="Confirm Password"
+                            type={showConfirmPassword ? "text" : "password"}
+                            className="w-full pl-3 pr-10"  // Add padding for the icon
+                        />
+                        <div className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer" onClick={toggleConfirmPasswordVisibility}>
+                            {showConfirmPassword ? <FaEyeSlash className="text-gray-400" /> : <FaEye className="text-gray-400" />}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Sign Up Button */}
+                <div className="w-full max-w-md mt-6">
+                    <Button
+                        text="SIGN UP"
+                        onClick={() => {
+                            // Add your sign-up logic here
+                        }}
+                        className="w-full bg-[#3B5F5D] text-white py-3 rounded-lg cursor-pointer font-bold"
+                    />
+                </div>
+
+                {/* Black Line Separator */}
+                <div className="w-full max-w-md border-t border-black my-6"></div>
+
+                {/* Already have an account? and Log In Button */}
+                {/* New Sign Up as Civil? Text */}
+                <div className="w-full max-w-md text-center">
+                <p className="text-black font-medium mb-2 text-base">
+            sign up as civil ? <span className="text-[#3B5F5D] cursor-pointer underline" onClick={() => { 
+            // Add your action for "Press here" here 
+        }}>press here</span>
+    </p>
+</div>
+
+            </div>
+
+            {/* Right side with image */}
+            <div className="hidden lg:block sm:hidden w-full lg:w-1/2 bg-gray-200 flex justify-center items-center">
+                <div className="w-full h-full max-w-full overflow-hidden">
+                    <img src={LoginImg} alt="Background" className="w-full h-full object-cover" />
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default SignUpUser;
