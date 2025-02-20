@@ -4,6 +4,7 @@ import civilcoLogo from "../../../assets/Header/civilco.svg";
 import InputField from '../InputFields/InputField';
 import Button from '../CustomButton/Button';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SignUpUser = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -17,6 +18,11 @@ const SignUpUser = () => {
         setShowConfirmPassword(!showConfirmPassword);
     };
 
+    const navigate = useNavigate();
+    const handleBackClick = () => {
+        navigate('/');
+      };
+
     return (
         <div className="flex flex-col sm:flex-row lg:flex-row h-screen">
             {/* Left side */}
@@ -26,7 +32,7 @@ const SignUpUser = () => {
                     {/* Back Button */}
                     <div className="flex items-center cursor-pointer text-[#3B5F5D]">
                         <FaArrowLeft className="text-2xl mr-2" />
-                        <span className="text-sm lg:text-lg font-bold underline p-2">Back</span>
+                        <span className="text-sm lg:text-lg font-bold underline p-2" onClick={handleBackClick}>Back</span>
                     </div>
                     {/* Logo */}
                     <div className="ml-4">

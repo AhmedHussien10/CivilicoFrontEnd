@@ -4,6 +4,7 @@ import civilcoLogo from "../../../assets/Header/civilco.svg";
 import InputField from '../InputFields/InputField';
 import Button from '../CustomButton/Button';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LoginUser = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -11,7 +12,11 @@ const LoginUser = () => {
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
-
+    const navigate = useNavigate();
+    const handleBackClick = () => {
+        navigate('/');
+      };
+    
     return (
         <div className="flex flex-col sm:flex-row lg:flex-row h-screen">
             {/* Left side */}
@@ -20,7 +25,7 @@ const LoginUser = () => {
                 <div className="flex items-center mb-4 lg:-mt-20 sm:mb-6">
                     <div className="flex items-center cursor-pointer text-[#3B5F5D] transform -translate-x-4 lg:-translate-x-8 sm:-translate-x-2">
                         <FaArrowLeft className="text-2xl mr-2" />
-                        <span className="text-sm lg:text-lg font-bold underline p-2">Back</span>
+                        <span className="text-sm lg:text-lg font-bold underline p-2" onClick={handleBackClick}>Back</span>
                     </div>
                     <div className="ml-4 transform -translate-x-6 lg:-translate-x-10 sm:-translate-x-4">
                         <img src={civilcoLogo} alt="Logo" className="h-12 lg:h-16" />
