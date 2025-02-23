@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import { FaArrowLeft, FaEnvelope, FaEye, FaEyeSlash, FaUser, FaPhone, FaCalendar, FaLock } from 'react-icons/fa';
+import { FaArrowLeft, FaEnvelope, FaEye, FaEyeSlash, FaUser, FaPhone, FaCalendar, FaLock, FaCheck } from 'react-icons/fa';
 import LoginImg from '../../../assets/LoginImg/LoginImg.svg';
 import civilcoLogo from "../../../assets/Header/civilco.svg";
 import InputField from '../InputFields/InputField';
@@ -7,7 +7,7 @@ import Button from '../CustomButton/Button';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const SignUpUser = () => {
+const CivilSignup = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -20,21 +20,16 @@ const SignUpUser = () => {
     };
 
     const navigate = useNavigate();
-
     const handleBackClick = () => {
         navigate('/');
-      };
-
-      const handleCivilSignupClick = () => {
-        navigate('/CivilSignUp');
-      };
+    };
 
     return (
         <div className="flex flex-col sm:flex-row lg:flex-row h-screen">
             {/* Left side */}
             <div className="w-full sm:w-full lg:w-1/2 flex flex-col justify-center items-center p-6 lg:p-10 bg-white h-full">
                 {/* Logo and Back Button */}
-                <div className="w-full max-w-md flex items-center justify-center  lg:lg:top-5 lg:left-6 transform -translate-x-10">
+                <div className="w-full max-w-md flex items-center justify-center lg:top-5 lg:left-6 transform -translate-x-10">
                     {/* Back Button */}
                     <div className="flex items-center cursor-pointer text-[#3B5F5D]">
                         <FaArrowLeft className="text-2xl mr-2" />
@@ -48,33 +43,18 @@ const SignUpUser = () => {
 
                 {/* Sign Up Heading */}
                 <div>
-                    <h2 className="text-2xl lg:text-3xl text-center mb-4 text-black">Sign Up</h2>
+                    <h2 className="text-2xl lg:text-3xl text-center mb-4 text-black mt-4">Sign Up As Civil Project</h2>
                 </div>
 
                 {/* Input Fields Container */}
                 <div className="w-full max-w-md">
-                    {/* First Name and Last Name Input Fields */}
-                    <div className="flex mb-4">
-                        <div className="relative flex-1 mr-2">
-                            <InputField
-                                placeholder="First Name"
-                                type="text"
-                                className="w-full pl-3 pr-10"  // Add padding for the icon
-                            />
-                            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                                <FaUser className="text-gray-400" />
-                            </div>
-                        </div>
-                        <div className="relative flex-1 ml-2">
-                            <InputField
-                                placeholder="Last Name"
-                                type="text"
-                                className="w-full pl-3 pr-10"  // Add padding for the icon
-                            />
-                            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                                <FaUser className="text-gray-400" />
-                            </div>
-                        </div>
+                    {/* Project Name Input Field */}
+                    <div className="mb-4 relative">
+                        <InputField
+                            placeholder="Project Name"
+                            type="text"
+                            className="w-full pl-3 pr-10"  // Add padding for the icon
+                        />
                     </div>
 
                     {/* Email Input Field */}
@@ -101,16 +81,22 @@ const SignUpUser = () => {
                         </div>
                     </div>
 
-                    {/* Birthday Input Field */}
+                    {/* Specialization Input Field */}
                     <div className="mb-4 relative">
                         <InputField
-                            placeholder="Birthday (DD/MM/YY)"
+                            placeholder="Specialization"
                             type="text"
                             className="w-full pl-3 pr-10"  // Add padding for the icon
                         />
-                        <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                            <FaCalendar className="text-gray-400" />
-                        </div>
+                    </div>
+
+                    {/* Verification Input Field */}
+                    <div className="mb-4 relative">
+                        <InputField
+                            placeholder="Verification"
+                            type="text"
+                            className="w-full pl-3 pr-10"  // Add padding for the icon
+                        />
                     </div>
 
                     {/* Password Input Field */}
@@ -149,19 +135,9 @@ const SignUpUser = () => {
                     />
                 </div>
 
-                {/* Black Line Separator */}
-                <div className="w-full max-w-md border-t border-black my-6"></div>
-
                 {/* Already have an account? and Log In Button */}
-                {/* New Sign Up as Civil? Text */}
                 <div className="w-full max-w-md text-center">
-                <p className="text-black font-medium mb-2 text-base">
-            sign up as civil ? <span className="text-[#3B5F5D] cursor-pointer underline" onClick={handleCivilSignupClick}
-            // Add your action for "Press here" here 
-        >press here</span>
-    </p>
-</div>
-
+                </div>
             </div>
 
             {/* Right side with image */}
@@ -174,4 +150,4 @@ const SignUpUser = () => {
     );
 };
 
-export default SignUpUser;
+export default CivilSignup;
