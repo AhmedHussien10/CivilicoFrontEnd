@@ -6,7 +6,7 @@ import Button from '../CustomButton/Button';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const LoginUser = () => {
+const CivilLogin = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     const togglePasswordVisibility = () => {
@@ -17,10 +17,6 @@ const LoginUser = () => {
         navigate('/');
       };
     
-      const handleCivilLoginClick = () => {
-        navigate('/CivilLogin');
-      };
-
     return (
         <div className="flex flex-col sm:flex-row lg:flex-row h-screen">
             {/* Left side */}
@@ -38,7 +34,7 @@ const LoginUser = () => {
 
                 {/* Log in Heading */}
                 <div>
-                    <h2 className="text-2xl lg:text-3xl text-center mb-4 text-black">Log in</h2>
+                    <h2 className="text-2xl lg:text-3xl text-center mb-4 text-black">Log in As Civil Project</h2>
                 </div>
 
                 {/* Input Fields Container */}
@@ -101,12 +97,6 @@ const LoginUser = () => {
                     />
                 </div>
 
-                {/* Log In as civil? press here */}
-                <div className="w-full max-w-md mt-4 text-center">
-                    <p className="text-black">
-                        Log In as civil? <span className="text-blue-500 hover:text-blue-600 cursor-pointer underline" onClick={handleCivilLoginClick}>press here</span>
-                    </p>
-                </div>
             </div>
 
             {/* Right side with image */}
@@ -119,4 +109,4 @@ const LoginUser = () => {
     );
 };
 
-export default LoginUser;
+export default CivilLogin;
