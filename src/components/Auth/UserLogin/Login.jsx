@@ -13,12 +13,17 @@ const LoginUser = () => {
         setShowPassword(!showPassword);
     };
     const navigate = useNavigate();
+
     const handleBackClick = () => {
         navigate('/');
       };
     
       const handleCivilLoginClick = () => {
         navigate('/CivilLogin');
+      };
+
+      const handleSignupButnClick = () => {
+        navigate('/signup');
       };
 
     return (
@@ -94,9 +99,7 @@ const LoginUser = () => {
                     <p className="text-black font-bold mb-2">Don’t have an account?</p>
                     <Button
                         text="SIGN UP"
-                        onClick={() => {
-                            // Add your sign-up logic here
-                        }}
+                        onClick={handleSignupButnClick}
                         className="w-full bg-[#3B5F5D] text-white py-3 rounded-lg cursor-pointer font-bold mt-6"
                     />
                 </div>
